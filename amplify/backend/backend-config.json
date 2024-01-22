@@ -1,19 +1,5 @@
 {
   "api": {
-    "getFaceLivenessResult": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "category": "function",
-          "resourceName": "reactFaceLivenessCreateSession"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "API Gateway"
-    },
     "reactFaceLivenessAPI": {
       "dependsOn": [
         {

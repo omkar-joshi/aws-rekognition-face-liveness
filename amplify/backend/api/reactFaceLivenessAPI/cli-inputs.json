@@ -7,6 +7,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/getFaceLivenessResult": {
+      "name": "/getFaceLivenessResult",
+      "lambdaFunction": "reactFaceLivenessCreateSession",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

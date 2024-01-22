@@ -37,11 +37,22 @@ app.get("/createFaceLivenessSession", async function (req, res) {
   const sessionId = response.SessionId;
   console.log("SessionId:", sessionId);
 
-  res.json({ success: "get call succeed!", sessionId });
+  res.json({ sessionId });
 });
 
 app.get("/getFaceLivenessResult", async function (req, res) {
-  res.json({ success: "getFaceLivenessResult get call succeed!" });
+  const response = await rekognitionClient
+    .getFaceLivenessSessionResults({
+      SessionId: req.query.sessionId,
+    })
+    .promise();
+
+  const confidence = response.Confidence;
+  const status = response.Status;
+  console.log("Confidence:", confidence);
+  console.log("Status:", status);
+
+  res.json({ confidence, status, isLive: confidence >= 90 });
 });
 
 app.get("/createFaceLivenessSession/*", function (req, res) {

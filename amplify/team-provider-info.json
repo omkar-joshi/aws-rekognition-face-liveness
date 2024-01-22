@@ -18,7 +18,7 @@
       "function": {
         "reactFaceLivenessCreateSession": {
           "deploymentBucketName": "amplify-reactfaceliveness-dev-114927-deployment",
-          "s3Key": "amplify-builds/reactFaceLivenessCreateSession-4b6661526c336957374f-build.zip"
+          "s3Key": "amplify-builds/reactFaceLivenessCreateSession-69566830386b744f616a-build.zip"
         }
       },
       "api": {

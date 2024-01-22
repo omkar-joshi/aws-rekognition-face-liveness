@@ -10,15 +10,11 @@ export function LivenessQuickStartReact() {
 
   React.useEffect(() => {
     const fetchCreateLiveness: () => Promise<void> = async () => {
-      /*
-       * This should be replaced with a real call to your own backend API
-       */
-      // await new Promise((r) => setTimeout(r, 2000));
-      // const mockResponse = { sessionId: "mockSessionId" };
-      // const data = mockResponse;
-
-      console.log("fetching...");
-      setCreateLivenessApiData(null);
+      const response = await fetch(
+        "https://mnqvx826lg.execute-api.us-east-1.amazonaws.com/dev/createFaceLivenessSession"
+      );
+      const sessionData = await response.json();
+      setCreateLivenessApiData(sessionData);
       setLoading(false);
     };
 
@@ -26,27 +22,16 @@ export function LivenessQuickStartReact() {
   }, []);
 
   const handleAnalysisComplete: () => Promise<void> = async () => {
-    console.log("analysis complete");
-    /*
-     * This should be replaced with a real call to your own backend API
-     */
-    // const response = await fetch(
-    //   `/api/get?sessionId=${createLivenessApiData.sessionId}`
-    // );
-    // const data = await response.json();
+    const response = await fetch(
+      `/api/get?sessionId=${createLivenessApiData?.sessionId}`
+    );
+    const data = await response.json();
 
-    /*
-     * Note: The isLive flag is not returned from the GetFaceLivenessSession API
-     * This should be returned from your backend based on the score that you
-     * get in response. Based on the return value of your API you can determine what to render next.
-     * Any next steps from an authorization perspective should happen in your backend and you should not rely
-     * on this value for any auth related decisions.
-     */
-    // if (data.isLive) {
-    //   console.log("User is live");
-    // } else {
-    //   console.log("User is not live");
-    // }
+    if (data.isLive) {
+      console.log("User is live");
+    } else {
+      console.log("User is not live");
+    }
   };
 
   return (
@@ -55,7 +40,7 @@ export function LivenessQuickStartReact() {
         <Loader />
       ) : (
         <FaceLivenessDetector
-          sessionId={createLivenessApiData.sessionId}
+          sessionId={createLivenessApiData?.sessionId || ""}
           region="us-east-1"
           onAnalysisComplete={handleAnalysisComplete}
           onError={(error) => {
