@@ -10,6 +10,11 @@
       "StackName": "amplify-reactfaceliveness-dev-114927",
       "StackId": "arn:aws:cloudformation:us-east-1:651204778228:stack/amplify-reactfaceliveness-dev-114927/34f961b0-b8ee-11ee-a790-0a5872887b55",
       "AmplifyAppId": "d1l202v1wjrhh4"
+    },
+    "categories": {
+      "auth": {
+        "reactfaceliveness9468346a": {}
+      }
     }
   }
 }
