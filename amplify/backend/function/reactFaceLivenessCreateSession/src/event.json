@@ -1,11 +1,8 @@
 {
-  "httpMethod": "POST",
-  "path": "/item",
-  "queryStringParameters": {
-    "limit": "10"
-  },
+  "httpMethod": "GET",
+  "path": "/createFaceLivenessSession",
+  "queryStringParameters": {},
   "headers": {
     "Content-Type": "application/json"
-  },
-  "body": "{\"msg\":\"Hello from the event.json body\"}"
+  }
 }

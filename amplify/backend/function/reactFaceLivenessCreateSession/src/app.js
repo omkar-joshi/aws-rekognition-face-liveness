@@ -40,6 +40,10 @@ app.get("/createFaceLivenessSession", async function (req, res) {
   res.json({ success: "get call succeed!", sessionId });
 });
 
+app.get("/getFaceLivenessResult", async function (req, res) {
+  res.json({ success: "getFaceLivenessResult get call succeed!" });
+});
+
 app.get("/createFaceLivenessSession/*", function (req, res) {
   // Add your code here
   res.json({ success: "get call succeed!", url: req.url });
