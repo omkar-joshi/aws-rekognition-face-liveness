@@ -1,4 +1,20 @@
 {
+  "api": {
+    "reactFaceLivenessAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "reactFaceLivenessCreateSession"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "reactfaceliveness9468346a": {
       "customAuth": false,
@@ -25,6 +41,31 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "reactFaceLivenessCreateSession": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_reactFaceLivenessCreateSession_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "reactFaceLivenessCreateSession"
+        }
+      ]
+    },
+    "AMPLIFY_function_reactFaceLivenessCreateSession_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "reactFaceLivenessCreateSession"
+        }
+      ]
     }
   }
 }

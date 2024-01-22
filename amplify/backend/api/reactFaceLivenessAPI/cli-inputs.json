@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/createFaceLivenessSession": {
+      "name": "/createFaceLivenessSession",
+      "lambdaFunction": "reactFaceLivenessCreateSession",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

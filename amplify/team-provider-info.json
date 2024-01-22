@@ -14,6 +14,15 @@
     "categories": {
       "auth": {
         "reactfaceliveness9468346a": {}
+      },
+      "function": {
+        "reactFaceLivenessCreateSession": {
+          "deploymentBucketName": "amplify-reactfaceliveness-dev-114927-deployment",
+          "s3Key": "amplify-builds/reactFaceLivenessCreateSession-4b6661526c336957374f-build.zip"
+        }
+      },
+      "api": {
+        "reactFaceLivenessAPI": {}
       }
     }
   }
