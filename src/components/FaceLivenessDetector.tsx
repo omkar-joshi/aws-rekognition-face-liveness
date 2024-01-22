@@ -23,7 +23,7 @@ export function LivenessQuickStartReact() {
 
   const handleAnalysisComplete: () => Promise<void> = async () => {
     const response = await fetch(
-      `/api/get?sessionId=${createLivenessApiData?.sessionId}`
+      `https://mnqvx826lg.execute-api.us-east-1.amazonaws.com/dev/getFaceLivenessResult?sessionId=${createLivenessApiData?.sessionId}`
     );
     const data = await response.json();
 
