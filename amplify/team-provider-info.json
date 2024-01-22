@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-reactfaceliveness-dev-114927-authRole",
+      "UnauthRoleArn": "arn:aws:iam::651204778228:role/amplify-reactfaceliveness-dev-114927-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::651204778228:role/amplify-reactfaceliveness-dev-114927-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-reactfaceliveness-dev-114927-deployment",
+      "UnauthRoleName": "amplify-reactfaceliveness-dev-114927-unauthRole",
+      "StackName": "amplify-reactfaceliveness-dev-114927",
+      "StackId": "arn:aws:cloudformation:us-east-1:651204778228:stack/amplify-reactfaceliveness-dev-114927/34f961b0-b8ee-11ee-a790-0a5872887b55",
+      "AmplifyAppId": "d1l202v1wjrhh4"
+    }
+  }
+}
