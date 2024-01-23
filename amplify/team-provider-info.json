@@ -23,6 +23,9 @@
       },
       "api": {
         "reactFaceLivenessAPI": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
       }
     }
   }
