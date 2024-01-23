@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaceLivenessDetector } from "@aws-amplify/ui-react-liveness";
 import { Loader, ThemeProvider } from "@aws-amplify/ui-react";
 
 export function LivenessQuickStartReact() {
   const [loading, setLoading] = React.useState<boolean>(true);
-  const [createLivenessApiData, setCreateLivenessApiData] = React.useState<{
+  const [createLivenessApiData, setCreateLivenessApiData] = useState<{
     sessionId: string;
   } | null>(null);
+  const [livenessResult, setLivenessResult] = useState(null);
 
   React.useEffect(() => {
     const fetchCreateLiveness: () => Promise<void> = async () => {
@@ -27,10 +28,11 @@ export function LivenessQuickStartReact() {
     );
     const data = await response.json();
 
+    setLivenessResult(data);
     if (data.isLive) {
-      console.log("User is live");
+      console.log("User is live >>> ", data);
     } else {
-      console.log("User is not live");
+      console.log("User is not live >>> ", data);
     }
   };
 
@@ -39,14 +41,18 @@ export function LivenessQuickStartReact() {
       {loading ? (
         <Loader />
       ) : (
-        <FaceLivenessDetector
-          sessionId={createLivenessApiData?.sessionId || ""}
-          region="us-east-1"
-          onAnalysisComplete={handleAnalysisComplete}
-          onError={(error) => {
-            console.error(error);
-          }}
-        />
+        <>
+          <FaceLivenessDetector
+            sessionId={createLivenessApiData?.sessionId || ""}
+            region="us-east-1"
+            onAnalysisComplete={handleAnalysisComplete}
+            onError={(error) => {
+              console.error(error);
+            }}
+          />
+          <br />
+          {JSON.stringify(livenessResult)}
+        </>
       )}
     </ThemeProvider>
   );
